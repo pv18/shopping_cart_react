@@ -1,8 +1,12 @@
 import React from 'react';
 
-export const ButtonDelete = () => {
+interface Props {
+    deleteProduct: () => void
+}
+
+export const ButtonDelete = ({deleteProduct}: Props) => {
     return (
-        <button type="button">
+        <button type="button" onClick={deleteProduct}>
             <img src="./img/icons/cross.svg" alt="Delete"/>
         </button>
     );
