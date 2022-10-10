@@ -1,20 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Counter} from '../Counter';
 import {ButtonDelete} from '../ButtonDelete';
 import {IProduct} from '../../types/shared';
 import './style.scss';
 import {priceFormatter} from '../../utils/priceFormatter';
+import {CartContext} from '../../context/CartContext';
 
 interface Props {
     product: IProduct
-    deleteProduct: (id: number) => void
-    increase: (id: number) => void
-    decrease: (id: number) => void
-    changeValue: (id: number, value: number) => void
 }
 
-export const Product = ({product, deleteProduct, increase, decrease, changeValue}: Props) => {
-    const {id, img, title, priceTotal, count} = product
+export const Product = ({product}: Props) => {
+    const {id, image, title, price, count} = product
+    const {deleteProduct, increase, decrease, changeValue} = useContext(CartContext)
 
     const deleteProductHandler = () => {
         deleteProduct(id)
@@ -29,13 +27,13 @@ export const Product = ({product, deleteProduct, increase, decrease, changeValue
     }
 
     const changeValueHandler = (value: number) => {
-        changeValue(id,value)
+        changeValue(id, value)
     }
 
     return (
         <section className="product">
             <div className="product__img">
-                <img src={`./img/products/${img}`} alt={title}/>
+                <img src={image} alt={title}/>
             </div>
             <div className="product__title">{title}</div>
             <div className="product__count">
@@ -47,7 +45,7 @@ export const Product = ({product, deleteProduct, increase, decrease, changeValue
                 />
             </div>
             <div className="product__price">
-                {priceFormatter(priceTotal)} руб.
+                {priceFormatter(price * count)} $
             </div>
             <div className="product__controls">
                 <ButtonDelete deleteProduct={deleteProductHandler}/>

@@ -29,6 +29,10 @@
   @media (max-width: $mobile){
     grid-column: 1/3;
   }
+
+  img {
+    width: 100px;
+  }
 }
 
 .product__title {

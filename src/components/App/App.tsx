@@ -5,6 +5,7 @@ import './_base.scss';
 import './_section-cart.scss';
 import {Title} from '../Title/Title';
 import {Cart} from '../Cart';
+import {CartProvider} from '../../context/CartContext';
 
 const App = () => {
     return (
@@ -16,12 +17,14 @@ const App = () => {
             </header>
             <div className="section-cart__body">
                 <div className="container">
-                    <Cart/>
+                    <CartProvider>
+                        <Cart/>
+                    </CartProvider>
                 </div>
             </div>
         </section>
 
-);
+    );
 };
 
 export default App;

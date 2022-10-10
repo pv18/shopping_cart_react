@@ -1,20 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './style.scss';
-import {ITotal} from '../../types/shared';
 import {priceFormatter} from '../../utils/priceFormatter';
+import {CartContext} from '../../context/CartContext';
 
-interface Props {
-    total: ITotal
-}
-
-export const CartFooter = ({total}: Props) => {
+export const CartFooter = () => {
+    const {total} = useContext(CartContext)
     const {count, price} = total
 
     return (
         <footer className="cart-footer">
             <div className="cart-footer__count">{count} ед.</div>
             <div className="cart-footer__price">
-                {priceFormatter(price)} руб.
+                {priceFormatter(price)} $
             </div>
         </footer>
     );
