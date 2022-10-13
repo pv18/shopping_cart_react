@@ -1,8 +1,16 @@
+[//]: # (![preview]&#40;https://github.com/pv18/gallery-react/blob/master/public/img/preview.jpg&#41;)
 # Корзина товаров
+
+API - fakestoreapi.com
 
 ## Функционал
 
-Увеличение и уменьшение количества товаров, удаление товаров
-### Технологии
+* Изменение колличества товаров
+* Удаление товаров
+* Подсчет общего колличества и суммы 
 
-React, TS, UseState, UseEffect, UseContext
+## Технологии
+
+* React
+* TS
+* UseContext - для хранения глобального состояния приложения
