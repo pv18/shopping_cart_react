@@ -1,4 +1,4 @@
-[//]: # (![preview]&#40;https://github.com/pv18/gallery-react/blob/master/public/img/preview.jpg&#41;)
+![preview](https://github.com/pv18/shopping_cart_react/blob/master/public/img/assets/preview.jpg)
 # Корзина товаров
 
 API - fakestoreapi.com
